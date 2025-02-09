@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Car and Bike Parking</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <!-- Welcome Section -->
+    <section id="welcome-section">
+        <h1>Welcome to the KPR Parking </h1>
+        <p>"A place for your vehicle, made easy!"</p>
+        <button id="proceed-btn">Proceed to Book a Slot</button>
+    </section>
+
+    <!-- Slot Booking Form -->
+    <section id="booking-section" style="display: none;">
+        <header>
+            <h1>Smart Car and Bike Parking System</h1>
+        </header>
+
+        <main>
+            <section id="booking-form">
+                <h2>Book Your Parking Slot</h2>
+                <form id="slot-form">
+                    <label for="vehicle-type">Choose Vehicle Type:</label>
+                    <select id="vehicle-type" name="vehicle-type" required>
+                        <option value="" disabled selected>Select vehicle type</option>
+                        <option value="car">Car</option>
+                        <option value="bike">Bike</option>
+                    </select>
+
+                    <label for="slot">Choose Slot:</label>
+                    <div id="slots-container"></div>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="vehicle-number">Vehicle Number:</label>
+                    <input type="text" id="vehicle-number" name="vehicle-number" required>
+
+                    <label for="duration">Parking Duration (in hours):</label>
+                    <input type="number" id="duration" name="duration" required>
+
+                    <label for="pass-key">Your Pass Key (Auto-generated):</label>
+                    <input type="text" id="pass-key" name="pass-key" readonly required>
+
+                    <button type="submit">Book Slot</button>
+                </form>
+            </section>
+
+            <section id="payment-section">
+                <h2>Payment</h2>
+                <p>Pay via QR Code or Online Payment:</p>
+                <img src="QR.png" alt="QR Code for Payment">
+                <button id="online-payment-btn">Pay Online</button>
+            </section>
+
+            <section id="free-up-section">
+                <h2>Free Up a Slot</h2>
+                <form id="free-slot-form">
+                    <label for="free-slot">Enter Slot to Free:</label>
+                    <select id="free-slot" name="free-slot" required>
+                        <option value="" disabled selected>Select a slot</option>
+                    </select>
+
+                    <label for="pass-key-confirm">Enter Pass Key:</label>
+                    <input type="password" id="pass-key-confirm" name="pass-key-confirm" maxlength="4" required>
+
+                    <button type="submit">Free Slot</button>
+                </form>
+            </section>
+        </main>
+    </section>
+
+    <!-- User Dashboard -->
+    <section id="dashboard-section" style="display: none;">
+        <h2>Your Dashboard</h2>
+        <div id="user-bookings"></div>
+        <button id="logout-btn">Logout</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
